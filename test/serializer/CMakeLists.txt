@@ -1,18 +1,9 @@
-file(GLOB SRC_LIST 
-	"${CMAKE_CURRENT_SOURCE_DIR}/*.h" 
-	"${CMAKE_CURRENT_SOURCE_DIR}/*.hpp"
-	"${CMAKE_CURRENT_SOURCE_DIR}/*.c"
-	"${CMAKE_CURRENT_SOURCE_DIR}/*.cc"
-	"${CMAKE_CURRENT_SOURCE_DIR}/*.cpp"
-	"${CMAKE_CURRENT_SOURCE_DIR}/*.cxx"
-)
-
 set(TARGET_NAME "serializer")
-add_executable(${TARGET_NAME} ${SRC_LIST})
+add_executable(${TARGET_NAME} main.cpp ../doctest.h)
+set_property(TARGET ${TARGET_NAME} PROPERTY FOLDER "test")
 
 target_link_libraries(${TARGET_NAME}
-    klib
-    doctest
+    ${PROJECT_NAME}
 )
 
 add_test(NAME serializer_test COMMAND $<TARGET_FILE:${TARGET_NAME}>)
