@@ -14,8 +14,10 @@ A sort of C++11 utility functions.
 ## 编译环境
 
 * CMake 3.1及以上
+* [Clang 3.3](http://clang.llvm.org/cxx_status.html)及以上(如果你使用Clang编译)
 * Visual Studio 2015及以上(Windows)
-* Gcc 4.9及以上(Linux)
+* [Gcc 4.9](https://gcc.gnu.org/gcc-5/changes.html#libstdcxx)及以上(Linux)
+* [Xcode 8.0](https://stackoverflow.com/questions/28094794/why-does-apple-clang-disallow-c11-thread-local-when-official-clang-supports) 及以上(MacOS)
 
 ## 如何使用
 

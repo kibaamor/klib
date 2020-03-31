@@ -1,9 +1,8 @@
 #define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
-#include <doctest.h>
+#include "../doctest.h"
 #include <kstream.h>
 #include <kvariant.h>
 #include <kserializer.h>
-
 
 TEST_SUITE_BEGIN("variant");
 using namespace klib;
@@ -16,8 +15,8 @@ TEST_CASE("std::map<int32_t, std::vector<std::string>>")
 
     {
         std::map<int32_t, std::vector<std::string>> data = {
-            {0,{"a", "b", "c"}},
-            {1,{"aa", "bb", "cc"}},
+            { 0, { "a", "b", "c" } },
+            { 1, { "aa", "bb", "cc" } },
         };
         a.set(data);
         wserializer s(m);
@@ -45,8 +44,8 @@ TEST_CASE("string")
 TEST_CASE("variant::object_t")
 {
     variant::object_t a = {
-        {0,"a"},
-        {1,"aa"},
+        { 0, "a" },
+        { 1, "aa" },
     };
     variant v = to_variant(a);
 
@@ -58,8 +57,8 @@ TEST_CASE("variant::object_t")
 TEST_CASE("std::map<int, std::string>")
 {
     std::map<int, std::string> a = {
-        {0,"a"},
-        {1,"aa"},
+        { 0, "a" },
+        { 1, "aa" },
     };
     variant v = to_variant(a);
 
@@ -71,8 +70,8 @@ TEST_CASE("std::map<int, std::string>")
 TEST_CASE("std::map<int32_t, std::vector<std::string>>")
 {
     std::map<int32_t, std::vector<std::string>> a = {
-        {0,{"a", "b", "c"}},
-        {1,{"aa", "bb", "cc"}},
+        { 0, { "a", "b", "c" } },
+        { 1, { "aa", "bb", "cc" } },
     };
     variant v = to_variant(a);
 

@@ -1,12 +1,10 @@
 #define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
-#include <doctest.h>
+#include "../doctest.h"
 #include <kserializer.h>
 #include <climits>
 #include <cfloat>
 
-
-struct SubData
-{
+struct SubData {
     friend class klib::serialization_access;
 
     std::string _str;
@@ -34,8 +32,7 @@ public:
     }
 };
 
-class Data
-{
+class Data {
     friend class klib::serialization_access;
 
     template <typename S>
@@ -88,8 +85,8 @@ public:
         _f64 = DBL_MAX;
         _str = "kom";
         _data = {
-            {0,{"a", "b", "c"}},
-            {1,{"aa", "bb", "cc"}},
+            { 0, { "a", "b", "c" } },
+            { 1, { "aa", "bb", "cc" } },
         };
         _sub.init();
     }
@@ -187,8 +184,8 @@ TEST_CASE("std::map<int32_t, std::vector<std::string>>")
 
     {
         a = {
-            {0,{"a", "b", "c"}},
-            {1,{"aa", "bb", "cc"}},
+            { 0, { "a", "b", "c" } },
+            { 1, { "aa", "bb", "cc" } },
         };
         wserializer s(m);
         CHECK((s & a));
